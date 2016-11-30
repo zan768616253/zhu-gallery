@@ -476,6 +476,7 @@ function setupAbout() {
   });
 
   var about = new Element('div', { 'class': 'about hide', id: 'about' });
+  about.set('html', '<span>关于我们</span>');
   econt.adopt(about);
 }
 

@@ -272,11 +272,22 @@ a
 }
 
 .about.show {
+  visibility: visible;
   bottom: 0;
 }
 
 .about.hide {
+  visibility: hidden;
   bottom: -300px;
+}
+
+#gallery #content .about > span {
+  display: block;
+  position: relative;
+  margin: 50px auto;
+  color: white;
+  font-size: 50px;
+  text-align: center;
 }
 
   /* Thumbnail list */
