@@ -12,6 +12,11 @@ img
   border: none;
 }
 
+a
+{
+  cursor: pointer;
+}
+
 /* Main gallery elements */
 #gallery h2
 {
@@ -245,7 +250,36 @@ img
   right: 25%;
 }
 
-/* Thumbnail list */
+#gallery #content .about {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.about:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  filter: blur(25px);
+  background-color: black;
+  opacity: 0.6;
+}
+
+.about.show {
+  bottom: 0;
+}
+
+.about.hide {
+  bottom: -300px;
+}
+
+  /* Thumbnail list */
 #gallery #list
 {
   position: absolute;
