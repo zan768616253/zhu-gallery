@@ -465,6 +465,29 @@ function setupHeader()
   ehdr.setStyle('display', (ehdr.children.length? 'block': 'none'));
 }
 
+function setupAbout() {
+  var el = new Element('a', { 'href': '#' });
+  el.set('html', '<span>关于我们</span>');
+  ehdr.adopt(el);
+  el.addEvent('click', function (evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    toggleAbout(true);
+  });
+
+  var about = new Element('div', { 'class': 'about hide', id: 'about' });
+  about.set('html', '<span>关于我们</span>');
+  econt.adopt(about);
+}
+
+function toggleAbout (isSHow) {
+  if (isSHow) {
+    $$('#about').set('class', 'about show');
+  } else {
+    $$('#about').set('class', 'about hide');
+  }
+}
+
 function onMainReady()
 {
   resizeMainImg(eimg);
@@ -473,6 +496,8 @@ function onMainReady()
   eimg.inject(ebuff);
 
   setupHeader();
+  setupAbout();
+
   if(imgs.data[eidx].file)
   {
     var file = imgs.data[eidx].file[0];
